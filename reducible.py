@@ -14,7 +14,7 @@ Students. Academic penalties up to and including an F in the course are likely.
 UT EID 1: fl7449
 UT EID 2:
 """
-
+import sys
 STEP_SIZE_CONSTANT = 3
 
 def is_prime(n):
@@ -80,7 +80,7 @@ def insert_word(s, hash_table):
         if hash_table[idx] == '':
             hash_table[idx] = s
             return
-        elif hash_table[idx] == s:
+        if hash_table[idx] == s:
             return
         else:
             idx = (initial_idx + i * step) % table_size
@@ -102,7 +102,7 @@ def find_word(s, hash_table):
     for i in range(table_size):
         if hash_table[idx] == '':
             return False
-        elif hash_table[idx] == s:
+        if hash_table[idx] == s:
             return True
         else:
             idx = (initial_idx + i * step) % table_size
@@ -151,8 +151,6 @@ def get_longest_words(string_list):
 
 def main():
     """The main function that calculates the longest reducible words"""
-    import sys
-
     word_list = [line.strip() for line in sys.stdin if line.strip()]
 
     n_candidate = 2 * len(word_list) + 1
