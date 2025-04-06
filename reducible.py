@@ -82,8 +82,7 @@ def insert_word(s, hash_table):
             return
         if hash_table[idx] == s:
             return
-        else:
-            idx = (initial_idx + i * step) % table_size
+        idx = (initial_idx + i * step) % table_size
 
 def find_word(s, hash_table):
     """
@@ -104,8 +103,7 @@ def find_word(s, hash_table):
             return False
         if hash_table[idx] == s:
             return True
-        else:
-            idx = (initial_idx + i * step) % table_size
+        idx = (initial_idx + i * step) % table_size
 
     return False
 
